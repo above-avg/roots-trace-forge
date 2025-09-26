@@ -27,120 +27,120 @@ const TrackingDashboard = () => {
   ];
 
   return (
-    <section id="dashboard" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Live Tracking <span className="text-nature-green">Dashboard</span>
+    <section id="dashboard" className="py-20 bg-gradient-to-b from-muted/20 to-background">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-5xl md:text-7xl font-orbitron font-black text-foreground mb-8">
+            Live Tracking <span className="text-primary animate-glow">Dashboard</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-inter font-light leading-relaxed">
             Experience real-time visibility into your herb's journey with our comprehensive tracking system.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-slide-up">
           {/* Main Tracking Card */}
-          <div className="lg:col-span-2 space-y-6">
-            <Card className="overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-nature-green to-nature-forest text-white">
+          <div className="lg:col-span-2 space-y-8">
+            <Card className="overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-glow)]">
+              <CardHeader className="bg-gradient-to-r from-primary to-accent text-background">
                 <div className="flex items-center justify-between">
                   <div>
-                    <CardTitle className="text-2xl mb-2">{herbData.name}</CardTitle>
-                    <p className="text-nature-sage">Batch ID: {herbData.batchId}</p>
+                    <CardTitle className="text-3xl mb-2 font-orbitron font-bold">{herbData.name}</CardTitle>
+                    <p className="text-background/80 font-inter">Batch ID: {herbData.batchId}</p>
                   </div>
-                  <Badge variant="secondary" className="bg-nature-turmeric text-nature-forest">
+                  <Badge variant="secondary" className="bg-background/20 text-background border border-background/30 font-orbitron font-bold">
                     {herbData.status}
                   </Badge>
                 </div>
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <User className="w-5 h-5 text-nature-green" />
+              <CardContent className="p-8 bg-card/80 backdrop-blur-sm">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4 p-4 rounded-2xl bg-primary/5 border border-primary/10">
+                      <User className="w-6 h-6 text-primary" />
                       <div>
-                        <p className="font-semibold text-foreground">Collector</p>
-                        <p className="text-muted-foreground">{herbData.collector}</p>
+                        <p className="font-orbitron font-bold text-foreground">Collector</p>
+                        <p className="text-muted-foreground font-inter">{herbData.collector}</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <MapPin className="w-5 h-5 text-nature-green" />
+                    <div className="flex items-center space-x-4 p-4 rounded-2xl bg-accent/5 border border-accent/10">
+                      <MapPin className="w-6 h-6 text-accent" />
                       <div>
-                        <p className="font-semibold text-foreground">Origin</p>
-                        <p className="text-muted-foreground">{herbData.location}</p>
+                        <p className="font-orbitron font-bold text-foreground">Origin</p>
+                        <p className="text-muted-foreground font-inter">{herbData.location}</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Calendar className="w-5 h-5 text-nature-green" />
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4 p-4 rounded-2xl bg-nature-neon-teal/5 border border-nature-neon-teal/10">
+                      <Calendar className="w-6 h-6 text-nature-neon-teal" />
                       <div>
-                        <p className="font-semibold text-foreground">Harvest Date</p>
-                        <p className="text-muted-foreground">{herbData.harvestDate}</p>
+                        <p className="font-orbitron font-bold text-foreground">Harvest Date</p>
+                        <p className="text-muted-foreground font-inter">{herbData.harvestDate}</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <FlaskConical className="w-5 h-5 text-nature-green" />
+                    <div className="flex items-center space-x-4 p-4 rounded-2xl bg-nature-neon-purple/5 border border-nature-neon-purple/10">
+                      <FlaskConical className="w-6 h-6 text-nature-neon-purple" />
                       <div>
-                        <p className="font-semibold text-foreground">Quality Grade</p>
-                        <p className="text-muted-foreground">{herbData.quality}</p>
+                        <p className="font-orbitron font-bold text-foreground">Quality Grade</p>
+                        <p className="text-muted-foreground font-inter">{herbData.quality}</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-3 mb-8">
                   {herbData.certifications.map((cert, index) => (
-                    <Badge key={index} variant="outline" className="border-nature-green text-nature-green">
+                    <Badge key={index} variant="outline" className="border-primary/30 text-primary bg-primary/5 hover:bg-primary/10 font-inter font-semibold px-4 py-2 rounded-xl">
                       {cert}
                     </Badge>
                   ))}
                 </div>
                 
-                <Button className="w-full bg-gradient-to-r from-nature-green to-nature-forest">
+                <Button className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background font-orbitron font-bold text-lg py-6 rounded-2xl shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-nature)] transition-all duration-300">
                   View Complete Blockchain Record
                 </Button>
               </CardContent>
             </Card>
 
             {/* Journey Timeline */}
-            <Card>
+            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 shadow-[var(--shadow-soft)] bg-card/80 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Package className="w-6 h-6 text-nature-green" />
+                <CardTitle className="flex items-center space-x-3 font-orbitron font-bold text-2xl">
+                  <Package className="w-7 h-7 text-primary" />
                   <span>Supply Chain Journey</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-4">
+              <CardContent className="p-8">
+                <div className="space-y-6">
                   {journeySteps.map((step, index) => (
-                    <div key={index} className="flex items-center space-x-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                        step.status === 'completed' ? 'bg-nature-green' :
-                        step.status === 'active' ? 'bg-nature-turmeric' :
+                    <div key={index} className="flex items-center space-x-6 p-4 rounded-2xl hover:bg-muted/20 transition-colors duration-300">
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
+                        step.status === 'completed' ? 'bg-primary shadow-[var(--shadow-glow)]' :
+                        step.status === 'active' ? 'bg-accent animate-glow' :
                         'bg-muted'
                       }`}>
                         {step.status === 'completed' ? (
-                          <CheckCircle className="w-5 h-5 text-white" />
+                          <CheckCircle className="w-7 h-7 text-background" />
                         ) : step.status === 'active' ? (
-                          <Clock className="w-5 h-5 text-white animate-pulse" />
+                          <Clock className="w-7 h-7 text-background animate-pulse" />
                         ) : (
-                          <span className="w-3 h-3 bg-muted-foreground rounded-full"></span>
+                          <span className="w-4 h-4 bg-muted-foreground rounded-full"></span>
                         )}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between">
-                          <h4 className={`font-semibold ${
-                            step.status === 'completed' ? 'text-nature-green' :
-                            step.status === 'active' ? 'text-nature-turmeric' :
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className={`font-orbitron font-bold text-xl ${
+                            step.status === 'completed' ? 'text-primary' :
+                            step.status === 'active' ? 'text-accent' :
                             'text-muted-foreground'
                           }`}>
                             {step.title}
                           </h4>
-                          <span className="text-sm text-muted-foreground">{step.date}</span>
+                          <span className="text-sm text-muted-foreground font-inter font-medium bg-muted/50 px-3 py-1 rounded-full">{step.date}</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">{step.location}</p>
+                        <p className="text-muted-foreground font-inter">{step.location}</p>
                       </div>
                     </div>
                   ))}
@@ -150,44 +150,47 @@ const TrackingDashboard = () => {
           </div>
 
           {/* Blockchain Visualization */}
-          <div className="space-y-6">
-            <Card className="overflow-hidden">
+          <div className="space-y-8 animate-fade-in">
+            <Card className="overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 shadow-[var(--shadow-soft)] bg-card/80 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-center">Blockchain Network</CardTitle>
+                <CardTitle className="text-center font-orbitron font-bold text-xl">Blockchain Network</CardTitle>
               </CardHeader>
               <CardContent className="p-0">
-                <div className="relative h-64">
+                <div className="relative h-80">
                   <img 
                     src={blockchainImage} 
                     alt="Blockchain network" 
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-nature-forest/80 to-transparent flex items-end">
-                    <div className="text-white p-4">
-                      <p className="text-sm font-semibold">Live Network Status</p>
-                      <p className="text-xs opacity-90">12,847 verified transactions</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end">
+                    <div className="text-foreground p-6 w-full">
+                      <p className="font-orbitron font-bold text-lg mb-2">Live Network Status</p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-sm text-muted-foreground font-inter">12,847 verified transactions</p>
+                        <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 shadow-[var(--shadow-soft)] bg-card/80 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg">Quick Stats</CardTitle>
+                <CardTitle className="font-orbitron font-bold text-xl">Quick Stats</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Verified Farms</span>
-                  <span className="font-bold text-nature-green">2,847</span>
+              <CardContent className="space-y-6 p-6">
+                <div className="flex justify-between items-center p-4 rounded-2xl bg-primary/5 border border-primary/10">
+                  <span className="text-muted-foreground font-inter">Verified Farms</span>
+                  <span className="font-orbitron font-bold text-xl text-primary">2,847</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Active Batches</span>
-                  <span className="font-bold text-nature-turmeric">18,234</span>
+                <div className="flex justify-between items-center p-4 rounded-2xl bg-accent/5 border border-accent/10">
+                  <span className="text-muted-foreground font-inter">Active Batches</span>
+                  <span className="font-orbitron font-bold text-xl text-accent">18,234</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Blockchain Records</span>
-                  <span className="font-bold text-nature-forest">1.2M+</span>
+                <div className="flex justify-between items-center p-4 rounded-2xl bg-nature-neon-teal/5 border border-nature-neon-teal/10">
+                  <span className="text-muted-foreground font-inter">Blockchain Records</span>
+                  <span className="font-orbitron font-bold text-xl text-nature-neon-teal">1.2M+</span>
                 </div>
               </CardContent>
             </Card>
