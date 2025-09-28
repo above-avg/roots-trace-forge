@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Leaf, Search, Shield, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border shadow-[var(--shadow-soft)]">
       <div className="container mx-auto px-6 py-4">
@@ -36,7 +39,11 @@ const Navigation = () => {
               <Search className="w-4 h-4 mr-2" />
               Track Herb
             </Button>
-            <Button size="sm" className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background font-orbitron font-bold rounded-xl shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-nature)] transition-all duration-300">
+            <Button 
+              size="sm" 
+              onClick={() => navigate('/auth')}
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background font-orbitron font-bold rounded-xl shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-nature)] transition-all duration-300"
+            >
               Get Started
             </Button>
           </div>
