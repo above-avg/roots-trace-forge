@@ -17,7 +17,7 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-4xl">
+        <div className="max-w-xl">
           <div className="flex items-center space-x-3 mb-8 animate-fade-in">
             <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-primary/30 animate-glow">
               <Leaf className="w-6 h-6 text-primary" />
@@ -25,7 +25,7 @@ const HeroSection = () => {
             <span className="text-primary font-orbitron font-bold text-lg tracking-wide">Blockchain Botanicals</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-orbitron font-black text-foreground mb-8 leading-tight animate-slide-up">
+          <h1 className="text-5xl md:text-7xl font-orbitron font-black text-foreground mb-8 leading-tight animate-slide-up">
             From Soil to <span className="text-primary animate-glow">Shelf</span>
             <br />
             Complete Herb <span className="text-accent animate-glow">Traceability</span>
