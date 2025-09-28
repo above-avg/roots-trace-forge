@@ -84,7 +84,7 @@ const Benefits = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl p-12 md:p-16 border border-primary/20 backdrop-blur-sm animate-fade-in">
+        <div className="rounded-3xl p-12 md:p-16 border border-border/50 backdrop-blur-sm">
           <div className="text-center mb-16">
             <h3 className="text-4xl md:text-5xl font-orbitron font-black text-foreground mb-6">Proven Impact</h3>
             <p className="text-muted-foreground text-xl font-inter font-light">Real numbers from our growing network of verified herb collectors and manufacturers</p>
