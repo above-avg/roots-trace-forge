@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Shield, Leaf } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroBackground from "@/assets/hero-background-video.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Animation Effect */}
@@ -37,11 +40,20 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-slide-up">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background font-orbitron font-bold px-10 py-6 text-lg rounded-2xl shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-nature)] transition-all duration-300">
+            <Button 
+              size="lg" 
+              onClick={() => navigate('/auth')}
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background font-orbitron font-bold px-10 py-6 text-lg rounded-2xl shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-nature)] transition-all duration-300"
+            >
               Start Tracking
               <ArrowRight className="w-6 h-6 ml-2" />
             </Button>
-            <Button variant="hero" size="lg" className="px-10 py-6 text-lg rounded-2xl font-orbitron font-semibold">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              onClick={() => navigate('/auth')}
+              className="px-10 py-6 text-lg rounded-2xl font-orbitron font-semibold"
+            >
               Watch Demo
             </Button>
           </div>
