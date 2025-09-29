@@ -93,7 +93,7 @@ const Benefits = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-5xl md:text-6xl font-orbitron font-black text-primary mb-4 group-hover:text-accent transition-colors duration-300 animate-glow">
+                <div className="text-5xl md:text-6xl font-orbitron font-black text-primary mb-4 group-hover:text-accent transition-colors duration-300">
                   {stat.number}
                 </div>
                 <div className="text-2xl font-orbitron font-bold text-foreground mb-2">
